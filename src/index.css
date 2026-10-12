@@ -1,0 +1,97 @@
+body {
+  font-family: system-ui, sans-serif;
+  font-size: 14px;
+  margin: 0 16px;
+}
+
+main {
+  display: grid;
+  grid-template-columns: 3fr 2fr;
+  gap: 24px;
+  align-items: start;
+}
+
+table {
+  width: 100%;
+  border-collapse: collapse;
+}
+
+th,
+td {
+  text-align: left;
+  padding: 4px 8px;
+  border-bottom: 1px solid #ddd;
+}
+tbody tr {
+  cursor: pointer;
+}
+tr.selected {
+  background: #aaaaaa;
+}
+
+.stale {
+  opacity: 0.5;
+}
+
+.muted {
+  color: #777;
+}
+
+.error {
+  color: #b3261e;
+}
+
+.warning {
+  color: #8a5a00;
+}
+.detail {
+  display: grid;
+  grid-template-columns: max-content 1fr;
+  gap: 4px;
+}
+
+form[role='search'] {
+  display: flex;
+  gap: 16px;
+}
+
+label {
+  display: inline-flex;
+  gap: 4px;
+  align-items: center;
+}
+
+.status {
+  display: flex;
+  align-items: center;
+  min-height: 20px;
+}
+
+.pager {
+  display: flex;
+  gap: 8px;
+}
+
+.spinner {
+  animation: spin 0.8s linear infinite;
+}
+
+@keyframes spin {
+  to {
+    transform: rotate(360deg);
+  }
+}
+@media (prefers-reduced-motion: reduce) {
+  .spinner {
+    animation: none;
+  }
+}
+
+.visually-hidden {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  overflow: hidden;
+  clip-path: inset(50%);
+  white-space: nowrap;
+}
